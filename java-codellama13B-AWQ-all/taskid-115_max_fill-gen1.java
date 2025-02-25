@@ -1,0 +1,62 @@
+import java.util.*;
+import java.lang.reflect.*;
+import org.javatuples.*;
+import java.security.*;
+import java.math.*;
+import java.io.*;
+import java.util.stream.*;
+class Problem {
+    // You are given a rectangular grid of wells. Each row represents a single well,
+    // and each 1 in a row represents a single unit of water.
+    // Each well has a corresponding bucket that can be used to extract water from it, 
+    // and all buckets have the same capacity.
+    // Your task is to use the buckets to empty the wells.
+    // Output the number of times you need to lower the buckets.
+    // Example 1:
+    // >>> maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)1l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)1l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l))))), (1l))
+    // (6l)
+    // Example 2:
+    // >>> maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)1l, (long)1l, (long)1l))))), (2l))
+    // (5l)
+    // Example 3:
+    // >>> maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l))))), (5l))
+    // (0l)
+    // Constraints:
+    // * all wells have the same length
+    // * 1 <= grid.length <= 10^2
+    // * 1 <= grid[:,1].length <= 10^2
+    // * grid[i][j] -> 0 | 1
+    // * 1 <= capacity <= 10
+    public static long maxFill(ArrayList<ArrayList<Long>> grid, long capacity) {
+
+        // Your code here
+        int n = grid.size(), m = grid.get(0).size();
+        // dp[i][j][k] represents max water that can be extracted from [i, j]
+        // using only k buckets.
+        Long[][][] dp = new Long[n][m][(int)capacity];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                for (int k = 0; k < capacity; k++) {
+                    dp[i][j][k] = -1l;
+                }
+            }
+        }
+        dp[0][0][0] = 0l;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                for (int k = 0; k < capacity; k++) {
+                    // if current cell is 1, we can use that cell as well
+                    // and use the previous row as well.
+                    // so dp[i][j][k] = dp[i - 1][j][k - 1] + 1
+                    if (grid.get(i).get(j) == 1l) {
+                       
+    }
+    public static void main(String[] args) {
+    assert(maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)1l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)1l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l))))), (1l)) == (6l));
+    assert(maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)1l, (long)1l, (long)1l))))), (2l)) == (5l));
+    assert(maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)0l, (long)0l, (long)0l))))), (5l)) == (0l));
+    assert(maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l))))), (2l)) == (4l));
+    assert(maxFill((new ArrayList<ArrayList<Long>>(Arrays.asList((ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l)), (ArrayList<Long>)new ArrayList<Long>(Arrays.asList((long)1l, (long)1l, (long)1l, (long)1l))))), (9l)) == (2l));
+    }
+
+}

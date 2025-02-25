@@ -1,0 +1,67 @@
+import java.util.*;
+import java.lang.reflect.*;
+import org.javatuples.*;
+import java.security.*;
+import java.math.*;
+import java.io.*;
+import java.util.stream.*;
+class Problem {
+    // Return true is array list elements are monotonically increasing or decreasing.
+    // >>> monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)4l, (long)20l))))
+    // (true)
+    // >>> monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)20l, (long)4l, (long)10l))))
+    // (false)
+    // >>> monotonic((new ArrayList<Long>(Arrays.asList((long)4l, (long)1l, (long)0l, (long)-10l))))
+    // (true)
+    public static boolean monotonic(ArrayList<Long> l) {
+
+        if (l.size() == 1) {
+            return true;
+        }
+        ArrayList<Long> newL = (ArrayList<Long>)l.clone();
+        newL.remove(0);
+        if (newL.size() == 0) {
+            return true;
+        }
+        long prev = l.get(0);
+        long curr = l.get(1);
+        boolean increasing = false;
+        if (curr > prev) {
+            increasing = true;
+        } else {
+            increasing = false;
+        }
+        int index = 1;
+        while (index < newL.size()) {
+            prev = l.get(index);
+            curr = l.get(index + 1);
+            if (increasing) {
+                if (curr > prev) {
+                    index += 1;
+                    continue;
+                } else {
+                    return false;
+                }
+            } else {
+                if (curr < prev) {
+                    index += 1;
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)4l, (long)10l)))) == (true));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)4l, (long)20l)))) == (true));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)20l, (long)4l, (long)10l)))) == (false));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)4l, (long)1l, (long)0l, (long)-10l)))) == (true));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)4l, (long)1l, (long)1l, (long)0l)))) == (true));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)3l, (long)2l, (long)5l, (long)60l)))) == (false));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)3l, (long)4l, (long)5l, (long)60l)))) == (true));
+    assert(monotonic((new ArrayList<Long>(Arrays.asList((long)9l, (long)9l, (long)9l, (long)9l)))) == (true));
+    }
+
+}
