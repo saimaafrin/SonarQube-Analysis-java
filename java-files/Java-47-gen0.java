@@ -11,8 +11,19 @@ class Problem {
    * Output: true
    */
   public static boolean isBoomerang(int[][] points)  {
-    // Check if the points are adjacent to form a boomerang
-    return points[0][0] != points[1][0] && points[0][1] != points[2][1];
+    // Check if all points are on the same line (They should form a boomerang)
+    if (points[0][0] == points[1][0] && points[1][0] == points[2][0] && points[0][1] == points[1][1] && points[1][1] == points[2][1]) {
+      return false;
+    }
+    
+    // Check if the slopes of the line formed by the points are different.
+    // If yes, it means points do not form a boomerang.
+    if (points[1][1] - points[0][1] != 0 && (points[1][1] - points[0][1]) * (points[2][1] - points[0][1]) == 0) {
+      return false;
+    }
+
+    return true;
+ 
   }
   public static void main(String[] args) {
     assert isBoomerang(new int[][] { { 0, 0 }, { 2, 2 }, { 1, 1 } }) ==

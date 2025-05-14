@@ -27,14 +27,14 @@ class Problem {
      * Output: 5.29167
      */
   public double trimMean(int[] arr)  {
-    Arrays.sort(arr);
-    int n = arr.length;
-    double sum = 0;
-    for (int i = 2; i < n - 2; i++) {
-      sum += arr[i];
+        Arrays.sort(arr);
+        int n = arr.length;
+        double sum = 0;
+        for (int i = 2; i < n - 2; i++) {
+            sum += arr[i];
+        }
+        return sum / 7;
     }
-    return sum / (n - 4);
-  }
   public static void main(String[] args) {
     Problem solution = new Problem();
 

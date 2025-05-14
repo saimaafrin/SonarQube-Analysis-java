@@ -13,16 +13,18 @@ class Problem {
      * 0
      */
     public static int countDoubles(int[] numbers)  {
-        int count = 0;
-        Set<Integer> nums = new HashSet<>();
-        for (int num : numbers) {
-            if (nums.contains(num * 2)) {
-                count++;
+        Set<Integer> numSet = new HashSet<>();
+        int doubles = 0;
+
+        for(int num: numbers) {
+            if(numSet.contains(num * 2)) {
+                doubles++;
             } else {
-                nums.add(num);
+                numSet.add(num);
+           
             }
         }
-        return count;
+        return doubles;
     }
     public static void main(String[] args) {
         // Test the function with different test cases

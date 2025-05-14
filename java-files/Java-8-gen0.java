@@ -21,19 +21,13 @@ class Problem {
      * 1
      */
     public static int countPrefixWords(List<String> wordList, String prefix)  {
-        // Initialize counter
-        int counter = 0;
-
-        // Iterate over each word in wordList
+        int count = 0;
         for (String word : wordList) {
-            // If the current word starts with the prefix, increment counter
             if (word.startsWith(prefix)) {
-                counter++;
+                count++;
             }
-       
         }
-        // Return counter
-        return counter;
+        return count;
     }
     public static void main(String[] args) {
         // Test the function with different test cases

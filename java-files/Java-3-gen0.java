@@ -15,8 +15,13 @@ class Problem {
      * 6
      */
     public static int calculateTimeNeeded(int N)  {
-        return (N % 2 == 0) ? (N / 2) : ((N / 2) + 1);
-   
+        int time = 0;
+        
+        for(int i=1; i<=N; i++) {
+            time += i;
+        }
+        
+        return time;
     }
     public static void main(String[] args) {
         // Test the function with different test cases

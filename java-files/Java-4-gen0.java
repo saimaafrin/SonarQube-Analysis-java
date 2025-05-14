@@ -13,9 +13,9 @@ class Problem {
    * [[1]]
    */
   public List<List<Integer>> permute(int[] nums)  {
-    List<List<Integer>> output = new ArrayList<>();
-    backtrack(output, new ArrayList<>(), nums);
-    return output;
+    List<List<Integer>> result = new ArrayList<>();
+    backtrack(result, new ArrayList<>(), nums);
+    return result;
   }
 public static void main(String[] args) {
     Problem solution = new Problem();

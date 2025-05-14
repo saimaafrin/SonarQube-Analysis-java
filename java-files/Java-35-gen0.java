@@ -18,18 +18,16 @@ class Problem {
    * Output: 99
    */
   public static int singleNumber(int[] nums)  {
-    Map<Integer, Integer> map = new HashMap<>();
-
+    Map<Integer, Integer> count = new HashMap<>();
     for (int num : nums) {
-      map.put(num, map.getOrDefault(num, 0) + 1);
+      count.put(num, count.getOrDefault(num, 0) + 1);
     }
-
-    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+    for (Map.Entry<Integer, Integer> entry : count.entrySet()) {
       if (entry.getValue() == 1) {
         return entry.getKey();
       }
+   
     }
-
     return -1;
   }
   public static void main(String[] args) {

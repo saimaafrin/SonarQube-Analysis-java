@@ -14,35 +14,29 @@ class Problem {
      * Return the result string after sorting s with this algorithm.
      */
     public String sortString(String s) {
-        StringBuilder result = new StringBuilder();
         Map<Character, Integer> count = new HashMap<>();
-        for (char c: s.toCharArray()) {
+        for (char c : s.toCharArray()) {
             count.put(c, count.getOrDefault(c, 0) + 1);
         }
 
-        PriorityQueue<Character> minHeap = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));
-        PriorityQueue<Character> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
-
-        for (char c: count.keySet()) {
-            minHeap.offer(c);
-            maxHeap.offer(c);
-        }
-
-        while (!minHeap.isEmpty()) {
-            result.append(minHeap.poll());
-            if (!minHeap.isEmpty()) {
-                result.append(minHeap.poll());
+        StringBuilder builder = new StringBuilder();
+        while (count.size() > 0) {
+            char minChar = getMinChar(count);
+            builder.append(minChar);
+            count.put(minChar, count.get(minChar) - 1);
+            if (count.get(minChar) == 0) {
+                count.remove(minChar);
             }
-            if (!maxHeap.isEmpty()) {
-                result.append(maxHeap.poll());
+
+            char maxChar = getMaxChar(count);
+            builder.append(maxChar);
+            count.put(maxChar, count.get(maxChar) - 1);
+            if (count.get(maxChar) == 0) {
+                count.remove(maxChar);
            
-                if (!maxHeap.isEmpty()) {
-                    result.append(maxHeap.poll());
-                }
             }
         }
-
-        return result.toString();
+        return builder.toString();
     }
     public static void main(String[] args) {
         Problem solution = new Problem();

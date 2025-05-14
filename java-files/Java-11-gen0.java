@@ -21,17 +21,18 @@ class Problem {
      * "appx(A, A) = 1"
      */
     public static String appx(String word1, String word2)  {
-        int commonLetters = 0;
+        int count = 0;
+        int totalLength = word1.length() + word2.length();
+
         for (int i = 0; i < word1.length() && i < word2.length(); i++) {
             if (word1.charAt(i) == word2.charAt(i)) {
-                commonLetters++;
+                count++;
             }
-       
         }
-        if (word1.length() + word2.length() == 0) {
-            return "0";
-        }
-        return commonLetters + "/" + (word1.length() + word2.length());
+
+        int approximation = (count * 2) / totalLength;
+
+        return approximation + "/" + (totalLength - count * 2);
     }
     public static void main(String[] args) {
         // Test the function with different test cases

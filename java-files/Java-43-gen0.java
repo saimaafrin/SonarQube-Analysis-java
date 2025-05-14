@@ -17,22 +17,16 @@ class Problem {
    * Output: 4
    */
   public static int largestRectangleArea(int[] heights)  {
-    // Your code goes here
-    Stack<Integer> stack = new Stack<>();
     int maxArea = 0;
-    int i = 0;
-    while (i <= heights.length) {
-      while (!stack.empty() && (i == heights.length || heights[i] < heights[stack.peek()])) {
-        int height = heights[stack.pop()];
-        int width = i;
-        if (!stack.isEmpty()) {
-          width = i - stack.peek() - 1;
+    for (int l = 0; l < heights.length; l++) {
+      for (int r = l; r < heights.length; r++) {
+        int minHeight = Integer.MAX_VALUE;
+        for (int h = l; h <= r; h++) {
+          minHeight = Math.min(minHeight, heights[h]);
        
         }
-        maxArea = Math.max(maxArea, height * width);
-     
+        maxArea = Math.max(maxArea, minHeight * (r - l + 1));
       }
-      stack.push(i++);
     }
     return maxArea;
   }

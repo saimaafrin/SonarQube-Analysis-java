@@ -17,29 +17,35 @@ class Problem {
       return 0;
     }
 
-    int[] uglyNumbers = new int[n];
-    uglyNumbers[0] = 1;
+    int[] ugly = new int[n];
+    ugly[0] = 1;
 
-    int next = 0;
     int i2 = 0, i3 = 0, i5 = 0;
+    int next_multiple_of_2 = 2;
+    int next_multiple_of_3 = 3;
+    int next_multiple_of_5 = 5;
 
-    while (next < n) {
-      int next2 = uglyNumbers[i2] * 2;
-      int next3 = uglyNumbers[i3] * 3;
-      int next5 = uglyNumbers[i5] * 5;
+    for (int i = 1; i < n; i++) {
+      ugly[i] = Math.min(next_multiple_of_2, Math.min(next_multiple_of_3, next_multiple_of_5));
 
-      int min = Math.min(next2, Math.min(next3, next5));
+      if (ugly[i] == next_multiple_of_2) {
+        i2 += 1;
+        next_multiple_of_2 = ugly[i2] * 2;
+      }
 
-      if (next2 == min) i2++;
-      if (next3 == min) i3++;
-      if (next5 == min) i5++;
+      if (ugly[i] == next_multiple_of_3) {
+        i3 += 1;
+        next_multiple_of_3 = ugly[i3] * 3;
+     
+      }
 
-      uglyNumbers[next] = min;
-      next++;
-   
+      if (ugly[i] == next_multiple_of_5) {
+        i5 += 1;
+        next_multiple_of_5 = ugly[i5] * 5;
+      }
     }
 
-    return uglyNumbers[n - 1];
+    return ugly[n - 1];
   }
   public static void main(String[] args) {
     assert findNthUglyNumber(1) == 1 : "Test case 1 failed";

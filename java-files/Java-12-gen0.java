@@ -16,10 +16,12 @@ class Problem {
      */
     public static String convertDatesToWeekdays(String date)  throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("MM dd yyyy");
-        SimpleDateFormat weekdaySdf = new SimpleDateFormat("EEEE");
-        Date d = sdf.parse(date);
-        String weekday = weekdaySdf.format(d).toLowerCase();
-        return "Today is " + weekday;
+        SimpleDateFormat wsf = new SimpleDateFormat("EEEE");
+        
+        Date parsedDate = sdf.parse(date);
+        String weekday = wsf.format(parsedDate);
+        
+        return weekday + " " + date + " is a " + weekday;
     }
     public static void main(String[] args) {
         // Test the function with different test cases

@@ -10,15 +10,17 @@ class Problem {
      */
     public int maxAbsoluteSum(int[] nums)  {
         int n = nums.length;
-        int maxEndingHere = nums[0];
-        int maxSoFar = nums[0];
+        if (n == 0) return 0;
 
-        for(int i=1; i<n; i++){
-            maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]);
-            maxSoFar = Math.max(maxSoFar, maxEndingHere);
-       
+        int globalMax = nums[0], localMax = nums[0], globalMin = nums[0], localMin = nums[0];
+        for (int i = 1; i < n; i++) {
+            localMax = Math.max(nums[i], localMax + nums[i]);
+            localMin = Math.min(nums[i], localMin + nums[i]);
+
+            globalMax = Math.max(globalMax, localMax);
+            globalMin = Math.min(globalMin, localMin);
         }
-        return maxSoFar;
+        return Math.max(globalMax, Math.abs(globalMin));
     }
 public static void main(String[] args) {
         Problem solution = new Problem();

@@ -12,18 +12,20 @@ class Problem {
      * findNthLeapYear(1996, 10) => 2032
      */
     public static int findNthLeapYear(int Y, int N)  {
-        int leapCount = 0;
-        while(Y <= N){
-            if((Y % 4 == 0 && Y % 100 != 0) || Y % 400 == 0){
-                leapCount++;
+        // check if year Y is a leap year
+        if (Y % 4 == 0 && (Y % 100 != 0 || Y % 400 == 0)) {
+            int leapYearsAfterY = N;
+            while (leapYearsAfterY > 0) {
+                Y++;
+                if (Y % 4 == 0 && (Y % 100 != 0 || Y % 400 == 0)) {
+                    leapYearsAfterY--;
+               
+                }
             }
-            Y++;
-       
-            if(leapCount == N){
-                return Y;
-            }
+            return Y;
+        } else {
+            return "Year " + Y + " is not a leap year.";
         }
-        return Y;
     }
     public static void main(String[] args) {
         // Test the function with the examples from the comment

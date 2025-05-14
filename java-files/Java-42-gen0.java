@@ -20,25 +20,15 @@ class Problem {
    */
   public static int squarePermutations(int[] A)  {
     int count = 0;
-    int n = A.length;
-    Set<List<Integer>> set = new HashSet<>();
-
-    for (int i = 0; i < n; i++) {
-      int num = A[i];
-      List<Integer> list = new ArrayList<>();
-      for (int j = i + 1; j < n; j++) {
-        int square = A[j];
-        if (Math.sqrt(square) == (int) Math.sqrt(square)) {
-          list.add(square);
+    Set<Integer> set = new HashSet<>();
+    for (int i = 0; i < A.length; i++) {
+      for (int j = i + 1; j < A.length; j++) {
+        if (A[i] * A[i] == A[j] + A[j] && !set.contains(A[i])) {
+          count++;
+          set.add(A[i]);
         }
       }
-      if (list.size() > 0) {
-        Collections.sort(list);
-        set.add(list);
-      }
     }
-
-    count = set.size();
     return count;
   }
   public static void main(String[] args) {

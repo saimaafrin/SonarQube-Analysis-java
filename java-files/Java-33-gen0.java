@@ -14,12 +14,12 @@ class Problem {
         StringBuilder sb = new StringBuilder();
         k = 27 - k;
         while (n > 0) {
-            if (k >= 2) {
+            if (k > 2) {
                 sb.append('a');
                 k -= 1;
             } else {
                 sb.append('z');
-                k += 2;
+                k += 25;
            
             }
             n -= 1;

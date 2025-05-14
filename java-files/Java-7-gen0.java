@@ -14,7 +14,9 @@ class Problem {
      * @return the maximum number of regions
      */
     public static int maxRegions(int N)  {
-        return (int)(Math.pow(2, N) - 1);
+        // For each triangle, there are (N-2) regions
+        // The total number of regions is the sum of these
+        return N * (N - 1) / 2;
     }
     public static void main(String[] args) {
         // Test the function with different test cases

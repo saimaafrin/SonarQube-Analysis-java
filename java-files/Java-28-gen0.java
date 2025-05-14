@@ -26,29 +26,22 @@ class Problem {
      * Explanation: For k = 19, we can get 1 + 5 + 13 = 19.
      */
   public int findMinFibonacciNumbers(int k)  {
-    int[] fib = new int[k + 1];
-    int index = 2;
-
-    // Initially, 1st and 2nd Fibonacci numbers are pre-calculated
-    fib[0] = 1;
-    fib[1] = 1;
-
-    // Fill the array with Fibonacci numbers in a loop
-    while (true) {
-      fib[index] = fib[index - 1] + fib[index - 2];
-      if (fib[index] > k) break;
-      index++;
-    }
-
-    int count = 0;
-    // Count the number of Fibonacci numbers we can get from k
-    for (int i = index - 1; i >= 0 && fib[i] > 0; i--) {
-      while (k >= fib[i]) {
-        k -= fib[i];
-        count++;
+      List<Integer> fib = new ArrayList<>();
+      fib.add(1);
+      fib.add(1);
+      while (true) {
+          int next = fib.get(fib.size() - 1) + fib.get(fib.size() - 2);
+          if (next > k) break;
+          fib.add(next);
       }
-    }
-    return count;
+      int count = 0;
+      for (int i = fib.size() - 1; i >= 0; i--) {
+          if (fib.get(i) <= k) {
+              k -= fib.get(i);
+              count++;
+          }
+      }
+      return count;
   }
   public static void main(String[] args) {
     Problem solution = new Problem();

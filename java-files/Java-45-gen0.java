@@ -11,16 +11,20 @@ class Problem {
    * Output: 21
    */
   public static int findSmallestInteger(int n)  {
-    String s = String.valueOf(n);
-    char[] arr = s.toCharArray();
-    Arrays.sort(arr);
-    for (int i = n + 1; i <= Integer.MAX_VALUE; i++) {
-      String str = String.valueOf(i);
-      char[] ch = str.toCharArray();
-      Arrays.sort(ch);
-      if (Arrays.equals(ch, arr)) {
+    StringBuilder sb = new StringBuilder(Integer.toString(n));
+    for (int i = n + 1; i < 10000; i++) {
+      String s = Integer.toString(i);
+      char[] ca = s.toCharArray();
+      Arrays.sort(ca);
+      StringBuilder sb2 = new StringBuilder();
+      for (char c : ca) {
+        sb2.append(c);
+     
+      }
+      if (sb2.toString().equals(sb.toString())) {
         return i;
       }
+   
     }
     return -1;
   }

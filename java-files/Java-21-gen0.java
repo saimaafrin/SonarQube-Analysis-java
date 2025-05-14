@@ -10,31 +10,17 @@ class Problem {
      * uniqueMorseRepresentations(["a"]) -> 1
      */
     public int uniqueMorseRepresentations(String[] words)  {
-        Map<String, String> morseCodeMapper = new HashMap<>();
-        for (char c = 'a'; c <= 'z'; c++) {
-            morseCodeMapper.put(String.valueOf(c), generateMorseCode(c));
+        Set<String> morseRepresentations = new HashSet<>();
+
+        for (String word : words) {
+            String morse = "";
+            for (char letter : word.toCharArray()) {
+                morse += MorseCode.get(letter);
+            }
+            morseRepresentations.add(morse);
         }
 
-        int count = 0;
-        for (int i = 0; i < words.length; i++) {
-            String word = words[i];
-            String morseCode = "";
-            for (int j = 0; j < word.length(); j++) {
-                morseCode += morseCodeMapper.get(String.valueOf(word.charAt(j)));
-            }
-
-            if (count == 0) {
-                count++;
-            }
-
-            if (!morseCode.equals(morseCodeMapper.get(words[i]))) {
-                count++;
-           
-                morseCodeMapper.put(words[i], morseCode);
-            }
-        }
-
-        return count;
+        return morseRepresentations.size();
     }
     public static void main(String[] args) {
         Problem solution = new Problem();

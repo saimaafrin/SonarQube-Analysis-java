@@ -12,19 +12,16 @@ class Problem {
      * false
      */
     public boolean splitArraySameAverage(int[] nums)  {
-        int total = 0;
-        for(int num: nums) total += num;
-
-        for(int i = 1; i < nums.length; i++){
-            if(total % i == 0){
-                int a = total / i;
-                int b = 0;
-                for(int j = 0; j < i; j++){
-                    b += nums[j];
-                }
-                if(a == b){
+        double avg = Arrays.stream(nums).average().getAsDouble();
+        Set<Double> seen = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (seen.contains(avg - nums[i] - nums[j])) {
                     return true;
+               
                 }
+                seen.add(nums[i] + nums[j]);
+           
             }
         }
         return false;

@@ -15,42 +15,28 @@ class Problem {
      * - If travel is not possible, return "cannot be travelled"
      */
     public static String canTravelMaze(int n, int[] start, int[] end, int[][] paths)  {
-        // Initialize a boolean array with the size of the n-teresting space to false
-        boolean[] visited = new boolean[n];
-        // Set the starting n-tersection to true
-        visited[start[0]] = true;
-        
-        // Initialize a queue and enqueue the starting n-tersection
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(start[0]);
+        Queue<int[]> queue = new LinkedList<>();
+        Set<int[]> visited = new HashSet<>();
 
-        // While there are elements in the queue
-        while (!queue.isEmpty()) {
-            // Dequeue the first n-tersection
-            int current = queue.poll();
+        queue.offer(start);
+        visited.add(start);
 
-            // If the current n-tersection is the ending n-tersection
-            if (current == end[0]) {
+        while(!queue.isEmpty()) {
+            int[] current = queue.poll();
+
+            if(Arrays.equals(current, end)) {
                 return "can be travelled";
             }
 
-            // For each path from the current n-tersection
-            for (int path : paths[current]) {
-                // If the path is not visited
-                if (!visited[path]) {
-                    // Mark the path as visited
-                    visited[path] = true;
-                    // Enqueue the path
-                    queue.add(path);
+            for(int[] path: paths) {
+                if(Arrays.equals(current, path) && !visited.contains(path)) {
+                    queue.offer(path);
+                    visited.add(path);
                 }
            
             }
-
         }
-
-        // If we've reached here, it means that we haven't been able to reach the ending n-tersection from the starting n-tersection
         return "cannot be travelled";
-
     }
     public static void main(String[] args) {
         // Test the function with different test cases

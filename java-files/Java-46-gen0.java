@@ -18,29 +18,17 @@ class Problem {
    * Output: ["0","1","8"]
    */
   public static List<String> centerSymmetricNumbers(int n)  {
-    List<String> result = new ArrayList<>();
-
-    if (n % 2 == 0) {
-      for (int i = 0; i <= 9; i++) {
-        for (int j = 0; j <= 9; j++) {
-          String number = Integer.toString(i) + Integer.toString(j) + Integer.toString(i) + Integer.toString(j);
-          if (number.length() == n) {
-            result.add(number);
-          }
-        }
-      }
-    } else {
-      for (int i = 0; i <= 9; i++) {
-        for (int j = 0; j <= 9; j++) {
-          String number = Integer.toString(i) + Integer.toString(j) + Integer.toString(i) + Integer.toString(j);
-          if (number.length() == n && number.charAt(0) == '0') {
-            result.add(number);
-          }
-        }
+    List<String> res = new ArrayList<>();
+    if (n <= 0) return res;
+    int maxNum = (int) Math.pow(10, n) - 1;
+    int minNum = (int) Math.pow(10, n - 1);
+    for (int num = minNum; num <= maxNum; num++) {
+      String strNum = String.valueOf(num);
+      if (isCenterSymmetric(strNum)) {
+        res.add(strNum);
       }
     }
-
-    return result;
+    return res;
   }
   private static void assertArrays(String[] expected, List<String> actual) {
     if (actual == null || actual.size() != expected.length) {

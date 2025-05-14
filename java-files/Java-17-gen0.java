@@ -21,16 +21,28 @@ class Problem {
 
   public int minTime(int n, int[][] edges, boolean[] hasApple)  {
     tree = new ArrayList<>();
-    res = new int[n];
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
       tree.add(new HashSet<>());
-    for(int[] edge : edges) {
+    }
+
+    for (int[] edge : edges) {
       tree.get(edge[0]).add(edge[1]);
       tree.get(edge[1]).add(edge[0]);
    
     }
+
+    res = new int[n];
+
     dfs(0, hasApple);
-    return Math.max(res[0], 0);
+
+    int total = 0;
+
+    for (int i = 0; i < n; i++) {
+      total += res[i];
+    }
+
+    return total;
+
   }
   public static void main(String[] args) {
     Problem solution = new Problem();

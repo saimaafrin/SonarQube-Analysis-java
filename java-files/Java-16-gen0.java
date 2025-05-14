@@ -24,17 +24,42 @@ class Problem {
      */
   public boolean canArrange(int[] arr, int k)  {
     Map<Integer, Integer> map = new HashMap<>();
+    int n = arr.length;
+
+    // count the frequency of each remainder in the array
     for (int num : arr) {
-      map.put(num, map.getOrDefault(num, 0) + 1);
+      map.put(num % k, map.getOrDefault(num % k, 0) + 1);
     }
 
-    for (int i = 0; i <= k / 2; i++) {
-      if (i == 0 || i == k - i) {
-        if (map.getOrDefault(i, 0) % 2 != 0) {
+    // if k is 0, then we can always arrange arr[::2] with arr[1::2]
+    if (k == 0) {
+      for (int count : map.values()) {
+        if (count % 2 != 0) {
           return false;
         }
-      } else {
-        if (map.getOrDefault(i, 0) != map.getOrDefault(k - i, 0)) {
+     
+        if (count == 0) {
+          continue;
+        }
+
+        if (count == 1) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // if k is not 0, then we can't arrange arr[::2] with arr[1::2]
+    if (map.getOrDefault(0, 0) % 2 != 0 || map.getOrDefault(0, 1) != 1) {
+      return false;
+    }
+
+    // check if there are any number pairs which are divisible by k
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+      if (entry.getKey() == 0 || entry.getKey() == k || (entry.getKey() > 0 && k % entry.getKey() == 0)) {
+        // if the count of the remainder in the array is odd, or there are more numbers than can be divided by the remainder
+        if (entry.getValue() % 2 != 0 || entry.getValue() > map.getOrDefault(k - entry.getKey(), 0)) {
           return false;
         }
       }

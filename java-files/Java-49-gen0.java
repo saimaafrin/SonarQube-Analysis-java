@@ -11,24 +11,28 @@ class Problem {
    * Output: 2
    */
   public static int calculateEnergy(String s)  {
-    if (s == null || s.length() == 0) {
-      return 0;
-    }
+    int energy = 0;
+    int maxLength = 0;
+    int[] charCount = new int[256];
 
-    Map<Character, Integer> lastIndexMap = new HashMap<>();
-    int maxEnergy = 0;
-    int currentEnergy = 0;
     for (int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-      if (lastIndexMap.containsKey(c)) {
-        currentEnergy += lastIndexMap.get(c) + 1;
+      char currentChar = s.charAt(i);
+
+      if (charCount[currentChar] != 0) {
+        if (charCount[currentChar] <= maxLength) {
+          energy++;
+        }
+        charCount[currentChar] = 0;
+     
+        maxLength = 0;
+      } else {
+        charCount[currentChar]++;
+        maxLength++;
       }
-      lastIndexMap.put(c, i);
-      maxEnergy = Math.max(maxEnergy, currentEnergy);
-      currentEnergy = 0;
    
     }
-    return maxEnergy;
+
+    return energy;
   }
   public static void main(String[] args) {
     // Test cases

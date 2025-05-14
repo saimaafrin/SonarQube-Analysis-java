@@ -13,30 +13,22 @@ class Problem {
     * - s consists of '(' and ')' only.
     */
  public int minInsertions(String s)  {
-    if (s.isEmpty())
-        return 0;
-
-    int count = 0, res = 0;
-    for (char c : s.toCharArray()) {
-        if (c == '(') {
-            count++;
-        } else {
-            if (count == 0) {
-                res++;
+        int count = 0, ans = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                count++;
             } else {
                 count--;
+                if (count < 0) {
+                    ans++;
+                    count++;
+                }
            
             }
+            ans += count % 2;
         }
-        if (count == 0) {
-            res++;
-        } else if (count > 0) {
-            count--;
-            res += 2;
-        }
+        return ans;
     }
-    return res;
-}
     public static void main(String[] args) {
         Problem solution = new Problem();
 

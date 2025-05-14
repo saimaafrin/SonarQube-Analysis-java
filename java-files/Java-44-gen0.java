@@ -13,27 +13,22 @@ class Problem {
    * Output: [1,2,4,7,5,3,6,8,9]
    */
   public static int[] diagonalOrder(int[][] mat)  {
-    int rows = mat.length;
-    int cols = mat[0].length;
-    int size = rows * cols;
+    if (mat.length == 0) return new int[0];
+    int m = mat.length;
+    int n = mat[0].length;
+    int size = m * n;
     int[] res = new int[size];
+    int resIndex = 0;
 
-    int k = 0;
-    for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < cols; j++) {
-        res[k++] = mat[i][j];
-     
-        if (i + 1 < rows && j + 1 < cols) {
-          res[k++] = mat[i + 1][j + 1];
+    for (int k = 0; k < m + n - 1; k++) {
+      if (k % 2 == 0) { // row-wise traversal
+        for (int l = 0; l <= k; l++) {
+          res[resIndex++] = mat[k - l][l];
         }
-      }
-   
-      if (i + 1 < rows) {
-        res[k++] = mat[i + 1][0];
-      }
-     
-      if (j + 1 < cols) {
-        res[k++] = mat[i][j + 1];
+      } else { // column-wise traversal
+        for (int l = Math.max(0, k - m + 1); l < k + 1; l++) {
+          res[resIndex++] = mat[l][k - l];
+        }
       }
     }
 

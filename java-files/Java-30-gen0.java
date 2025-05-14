@@ -27,20 +27,21 @@ class Problem {
      * Explanation: The string is already "good".
      */
   public String makeGood(String s)  {
-      Stack<Character> stack = new Stack<>();
-      for (char c : s.toCharArray()) {
-          if (!stack.isEmpty() && Math.abs(stack.peek() - c) == 32) {
-              stack.pop();
-          } else {
-              stack.push(c);
-         
-          }
+    StringBuilder sb = new StringBuilder(s);
+    for (int i = 0; i < sb.length() - 1; i++) {
+      char a = sb.charAt(i);
+      char b = sb.charAt(i + 1);
+      if (Math.abs(a - b) == 32) {
+        sb.delete(i, i + 2);
+        if (i > 0) {
+          i -= 2;
+        } else {
+          i = -1;
+       
+        }
       }
-      StringBuilder sb = new StringBuilder(stack.size());
-      while (!stack.isEmpty()) {
-          sb.append(stack.pop());
-      }
-      return sb.reverse().toString();
+    }
+    return sb.toString();
   }
 public static void main(String[] args) {
     Problem solution = new Problem();

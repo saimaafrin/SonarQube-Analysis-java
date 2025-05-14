@@ -11,7 +11,23 @@ class Problem {
    * Output: "rM gniD"
    */
   public static String reverseWords(String s)  {
-    // Your solution here
+    // Write your code here.
+    String[] words = s.split(" ");
+    StringBuilder output = new StringBuilder();
+
+    for (String word : words) {
+      StringBuilder reversedWord = new StringBuilder();
+      for (int i = word.length() - 1; i >= 0; i--) {
+        reversedWord.append(word.charAt(i));
+     
+      }
+      output.append(reversedWord.toString());
+      if (output.length() < s.length()) {
+        output.append(" ");
+      }
+   
+    }
+    return output.toString();
   }
   public static void main(String[] args) {
     assert reverseWords("The quick brown fox").equals("ehT kciuq nworb xof") : "Test failed for input: The quick brown fox";

@@ -23,22 +23,31 @@ class Problem {
    * Output: "0"
    */
   public static String addThousandSeparator(int n)  {
-    // Handle the special case of zero
     if (n == 0) {
       return "0";
     }
 
-    StringBuilder sb = new StringBuilder();
-    int count = 0;
-    for (int i = n.toString().length() - 1; i >= 0; i--) {
-      if (count > 0 && count % 3 == 0 && i != n.toString().length() - 1) {
-        sb.append(".");
-      }
-      sb.append(n.toString().charAt(i));
-      count++;
-   
+    StringBuilder result = new StringBuilder();
+    boolean isNegative = false;
+
+    if (n < 0) {
+      isNegative = true;
+      n = -n;
     }
-    return sb.reverse().toString();
+
+    do {
+      result.insert(0, n % 1000);
+      n /= 1000;
+      if (n > 0) {
+        result.insert(0, ".");
+      }
+    } while (n > 0);
+
+    if (isNegative) {
+      result.insert(0, "-");
+    }
+
+    return result.toString();
   }
   public static void main(String[] args) {
     assert "2.147.483.647".equals(

@@ -17,13 +17,8 @@ class Problem {
   public static int countDigitOne(int n)  {
     int count = 0;
     for (int i = 1; i <= n; i++) {
-      count += NumberUtils.digitCount(i, 1);
-   
-      if (i < 10) {
-        count += NumberUtils.digitCount(i, 0);
-      }
+      count += findDigitOne(i);
     }
-
     return count;
   }
   public static void main(String[] args) {

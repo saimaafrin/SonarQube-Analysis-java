@@ -15,18 +15,19 @@ class Problem {
    */
   public static List<Integer> lexicalOrder(int n)  {
     List<Integer> res = new ArrayList<>();
-    int number = 1;
-    for (int i = 1; i <= n; i++) {
-      res.add(number);
-      if (number * 10 <= n) {
-        number *= 10;
-      } else if (number % 10 != 9 && number + 1 <= n) {
-        number += 1;
+    int num = 1;
+    for(int i = 1; i <= n; i++) {
+      res.add(num);
+      if(num*10 <= n) {
+        num *= 10;
+      } else if(num%10 != 9 && num+1 <= n) {
+        num++;
       } else {
-        while (number % 10 == 9) {
-          number /= 10;
+        while(num % 10 == 9){
+          num /= 10;
+       
         }
-        number += 1;
+        num += 1;
       }
     }
     return res;

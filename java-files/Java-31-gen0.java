@@ -17,22 +17,22 @@ class Problem {
    * - s only contains lowercase English letters.
    */
   public int maxUniqueSplit(String s)  {
-    Set<String> seen = new HashSet<>();
-    int[] dp = new int[s.length() + 1];
-    dp[0] = 0;
-    for (int i = 1; i <= s.length(); i++) {
-      dp[i] = -1;
-      for (int j = 0; j < i; j++) {
-        String sub = s.substring(j, i);
-        if (seen.contains(sub)) continue;
-        if (dp[j] >= 0) {
-          dp[i] = Math.max(dp[i], dp[j] + 1);
-       
+    int n = s.length();
+    Set<String> set = new HashSet<>();
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+      set.clear();
+      for (int j = i; j < n; j++) {
+        String subStr = s.substring(i, j + 1);
+        if (set.contains(subStr)) {
+          break;
         }
-        seen.add(sub);
+        set.add(subStr);
+        ans = Math.max(ans, set.size());
+     
       }
     }
-    return dp[s.length()];
+    return ans;
   }
   public static void main(String[] args) {
     Problem solution = new Problem();

@@ -17,26 +17,17 @@ class Problem {
   * Output: 9
   */
   public int minOperations(int n)  {
-      // First, compute the target value to make all elements equal to mid value of arr[i] = (2 * i) + 1
-      int target = n % 2 == 0 ? n / 2 : (n - 1) / 2;
-      
-      int operations = 0;
-      for(int i = 0; i < n; i++) {
-          int currentValue = (2 * i) + 1;
-          int steps = currentValue - target;
-          
-          if(steps < 0) {
-              // If currentValue is smaller than target, we have to move currentValue to target
-              // So, we need to subtract steps from currentValue and add 1 to steps
-              operations += Math.abs(steps);
-              currentValue += Math.abs(steps);
-          }
-          
-          operations += currentValue / 2;
-     
-      }
-      
-      return operations;
+    int operations = 0;
+    int startIndex = 0;
+    for (int i = 0; i < n; i++) {
+      int currentValue = (2 * i) + 1;
+      int difference = Math.abs(currentValue - (2 * startIndex + 1));
+      operations += difference / 2;
+      operations += difference % 2;
+      startIndex = currentValue;
+   
+    }
+    return operations;
   }
   public static void main(String[] args) {
       Problem solution = new Problem();

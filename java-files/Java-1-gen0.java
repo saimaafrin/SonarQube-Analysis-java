@@ -14,10 +14,9 @@ class Problem {
          */
     public static double calculateAverageBalance(List<Double> closingBalances) {
         double sum = 0;
-        for(double bal : closingBalances) {
-            sum += bal;
+        for (Double closingBalance : closingBalances) {
+            sum += closingBalance;
         }
-
         return sum / closingBalances.size();
     }
     public static void main(String[] args) {

@@ -15,27 +15,21 @@ class Problem {
      * Output: 0
      */
   public int minOperations(String[] logs)  {
-        int steps = 0;
-        int folder = 0;
+        int level = 0;
         for (String log : logs) {
             switch (log) {
                 case "./":
                     // do nothing
                     break;
                 case "../":
-                    // Back to parent folder
-                    if (folder > 0) {
-                        folder--;
-                        steps++;
-                    }
+                    level = Math.max(level - 1, 0);
                     break;
                 default:
-                    folder++;
-                    steps++;
-                    break;
+                    level++;
+           
             }
         }
-        return folder + steps;
+        return level;
     }
   public static void main(String[] args) {
     Problem solution = new Problem();

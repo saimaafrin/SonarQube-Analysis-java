@@ -15,26 +15,20 @@ class Problem {
    * Output: 2
    */
   public static int minPerfectSquareSum(int n)  {
-    // Create a list to keep track of the minimum perfect squares we have so far.
-    List<Integer> squares = new ArrayList<>();
-
-    // While we still have some squares left to add.
-    while (n > 0) {
-      // Try adding the smallest possible square that is still smaller than n.
-      int square = findSmallestSquare(n, squares);
-      // Add this square to the list of squares.
-      squares.add(square);
-      // Subtract the square from n.
-      n -= square;
-   
-      // If n is now zero, we have found the minimum perfect squares that sum up to n.
-      if (n == 0) {
-        return squares.size();
-      }
+    if (n <= 0) {
+      return 0;
     }
-
-    // This should never happen as we've checked all possible squares.
-    return -1;
+    
+    int[] dp = new int[n + 1];
+    dp[0] = 0;
+    for (int i = 1; i <= n; i++) {
+      dp[i] = i; // initialize each value as i
+      for (int j = 1; j * j <= i; j++) {
+        dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+      }
+   
+    }
+    return dp[n];
   }
   public static void main(String[] args) {
     assert minPerfectSquareSum(26) == 2 : "Test case 1 failed";

@@ -11,19 +11,18 @@ class Problem {
      * 2
      */
     public int findLargestSubstring(List<String> strings)  {
-        int n = strings.size();
-        String longest = "";
-        for (int len = n; len > 0; len--) {
-            for (int i = 0; i <= n - len; i++) {
-                String candidate = strings.get(i);
-                String reversed = new StringBuilder(candidate).reverse().toString();
-                if (strings.contains(reversed)) {
-                    longest = candidate;
-                }
-           
+        if(strings == null || strings.size() == 0) {
+            return 0;
+        }
+        
+        String largestSubstring = "";
+        for(String str : strings){
+            if(str.length() > largestSubstring.length()){
+                largestSubstring = str;
             }
         }
-        return longest.length();
+        
+        return largestSubstring.length();
     }
     public static void main(String[] args) {
         Problem solution = new Problem();

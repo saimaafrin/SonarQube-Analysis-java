@@ -20,22 +20,25 @@ class Problem {
      * Explanation: The binary string "00" is not a substring of s.
      */
   public boolean hasAllCodes(String s, int k)  {
-    if (k > s.length())
-      return false;
-    
-    int numSubstrings = 0;
-    int totalSubstrings = 1 << k;
+    // Edge case
+    if (s.length() < k) return false;
+
+    // Create a set to store substrings
     Set<String> substrings = new HashSet<>();
 
+    // Iterate over the string s
     for (int i = 0; i <= s.length() - k; i++) {
-      String sub = s.substring(i, i + k);
-      substrings.add(sub);
+      // Get the substring
+      String substring = s.substring(i, i + k);
 
-      if (substrings.size() == totalSubstrings)
-        return true;
+      // If the substring is not in the set, add it to the set
+      if (!substrings.contains(substring)) {
+        substrings.add(substring);
+      }
     }
 
-    return false;
+    // If the set has exactly 2^k elements, return true
+    return substrings.size() == (int) Math.pow(2, k);
   }
   public static void main(String[] args) {
     Problem solution = new Problem();

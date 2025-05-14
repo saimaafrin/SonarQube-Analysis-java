@@ -16,7 +16,10 @@ class Problem {
    */
   public static List<Integer> findSteppingNumbers(int low, int high)  {
     List<Integer> result = new ArrayList<>();
-    for (int i = 0; i <= 9; i++) {
+    if (low == 0) {
+      result.add(0);
+    }
+    for (int i = 1; i < 10; i++) {
       dfs(low, high, i, result);
     }
     return result;

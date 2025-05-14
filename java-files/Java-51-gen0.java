@@ -13,23 +13,20 @@ class Problem {
    * Output: 4
    */
   public static int calculateUniqueSum(int[] nums)  {
-    // Create a HashMap to store the frequency of elements
-    HashMap<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
+    HashMap<Integer, Integer> hashMap = new HashMap<>();
     int sum = 0;
-
-    // Loop through the array
-    for(int num: nums) {
-      // If the element is not in the map, add it to the sum
-      if(freqMap.get(num) == null) {
-        freqMap.put(num, 1);
-        sum += num;
-      }
-      // If the element is in the map, increment its frequency
-      else {
-        freqMap.put(num, freqMap.get(num) + 1);
+    for(int num : nums) {
+      if(hashMap.containsKey(num)) {
+        hashMap.put(num, hashMap.get(num) + 1);
+      } else {
+        hashMap.put(num, 1);
       }
     }
-
+    for(Integer key : hashMap.keySet()) {
+      if(hashMap.get(key) == 1) {
+        sum += key;
+      }
+    }
     return sum;
   }
   public static void main(String[] args) {
