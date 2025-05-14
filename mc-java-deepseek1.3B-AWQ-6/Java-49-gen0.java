@@ -1,0 +1,39 @@
+class Problem {
+
+  /**
+   * Calculate the energy of the string, which is defined as the length of the longest non-empty substring containing only one character.
+   *
+   * @param s The input string.
+   * @return The energy of the string.
+   *
+   * Example:
+   * calculateEnergy("aabbccdd")
+   * Output: 2
+   */
+  public static int calculateEnergy(String s)  {
+    int energy = 0;
+    int maxLength = 0;
+    Map<Character, Integer> charIndices = new HashMap<>();
+
+    for (int start = 0, end = 0; end < s.length(); end++) {
+      char c = s.charAt(end);
+
+      if (charIndices.containsKey(c)) {
+        start = Math.max(start, charIndices.get(c) + 1);
+      }
+
+      energy = Math.max(energy, end - start + 1);
+      charIndices.put(c, end);
+    }
+
+    return energy;
+  }
+  public static void main(String[] args) {
+    // Test cases
+    assert calculateEnergy("aabbccdd") == 2 : "Test case 1 failed"; // Contains two characters 'aa', 'bb', 'cc', 'dd'
+    assert calculateEnergy("horizon") == 1 : "Test case 2 failed"; // All characters are unique
+    assert calculateEnergy("success") == 2 : "Test case 3 failed"; // Contains three characters 'ccc'
+
+    System.out.println("All tests passed");
+  }
+}
