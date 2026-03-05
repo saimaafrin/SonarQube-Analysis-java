@@ -1,0 +1,2 @@
+@Override protected Object convertToType(final Class<?> type,final Object value) throws Exception {
+if(value instanceof String && ((String)value).length() == 0) return super.convertToType(type,value); else return ((String)value).charAt(0); }

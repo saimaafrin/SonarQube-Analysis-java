@@ -1,0 +1,2 @@
+Edge edgeToNext(){
+return edge;}
