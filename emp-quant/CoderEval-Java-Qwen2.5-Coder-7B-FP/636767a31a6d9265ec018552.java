@@ -1,2 +1,4 @@
-@Override public String readString() throws IOException {
-return new String(readBytes()); }
+class Generated {
+    @Override public String readString() throws IOException {
+    return new String(readBytes()); }
+}

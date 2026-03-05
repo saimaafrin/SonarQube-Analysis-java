@@ -1,2 +1,4 @@
-@Override public ListNode<E> previousNode(){
-return prev; }
+class Generated {
+    @Override public ListNode<E> previousNode(){
+    return prev; }
+}

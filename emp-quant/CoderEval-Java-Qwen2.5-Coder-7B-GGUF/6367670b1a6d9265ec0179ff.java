@@ -1,6 +1,8 @@
-public static Byte[] nullToEmpty(final Byte[] array){
-if(array == null || array.length == 0){
-        return EMPTY_BYTE_OBJECT_ARRAY;
+class Generated {
+    public static Byte[] nullToEmpty(final Byte[] array){
+    if(array == null || array.length == 0){
+            return EMPTY_BYTE_OBJECT_ARRAY;
+        }
+        return array;
     }
-    return array;
 }

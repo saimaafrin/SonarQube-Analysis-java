@@ -1,6 +1,8 @@
-public static String peek(){
-if(isEmpty()){
-        return null;
+class Generated {
+    public static String peek(){
+    if(isEmpty()){
+            return null;
+        }
+        return stack[top];
     }
-    return stack[top];
 }

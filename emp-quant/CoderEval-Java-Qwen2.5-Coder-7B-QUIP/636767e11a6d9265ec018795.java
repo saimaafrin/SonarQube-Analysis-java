@@ -1,3 +1,5 @@
-public boolean isCompatible(DataTable dataset){
-return true;
+class Generated {
+    public boolean isCompatible(DataTable dataset){
+    return true;
+    }
 }

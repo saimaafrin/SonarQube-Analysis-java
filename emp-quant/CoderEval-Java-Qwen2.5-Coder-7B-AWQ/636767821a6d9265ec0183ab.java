@@ -1,2 +1,4 @@
-public boolean hasThrown(){
-return this.thrown!=null;}
+class Generated {
+    public boolean hasThrown(){
+    return this.thrown!=null;}
+}

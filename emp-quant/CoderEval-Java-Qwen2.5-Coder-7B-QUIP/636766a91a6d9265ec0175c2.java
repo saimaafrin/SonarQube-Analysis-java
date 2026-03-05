@@ -1,2 +1,4 @@
-private int pop(){
-return frame[sp--]; }
+class Generated {
+    private int pop(){
+    return frame[sp--]; }
+}

@@ -1,2 +1,4 @@
-public boolean hasThrown(){
-return thrown;}
+class Generated {
+    public boolean hasThrown(){
+    return thrown;}
+}

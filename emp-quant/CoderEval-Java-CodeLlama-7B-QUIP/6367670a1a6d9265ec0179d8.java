@@ -1,3 +1,5 @@
-@Override public void write(final byte[] b) throws IOException {
-write(b, 0, b.length);
+class Generated {
+    @Override public void write(final byte[] b) throws IOException {
+    write(b, 0, b.length);
+    }
 }

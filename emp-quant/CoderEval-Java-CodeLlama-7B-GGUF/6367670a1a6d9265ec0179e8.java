@@ -1,3 +1,5 @@
-public static Boolean[] nullToEmpty(final Boolean[] array){
-return nullToEmpty((Object[])array);
+class Generated {
+    public static Boolean[] nullToEmpty(final Boolean[] array){
+    return nullToEmpty((Object[])array);
+    }
 }

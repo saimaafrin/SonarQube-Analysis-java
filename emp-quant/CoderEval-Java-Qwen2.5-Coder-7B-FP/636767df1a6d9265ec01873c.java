@@ -1,2 +1,4 @@
-public String id(String entityId){
-return this.point + this.idConnector + entityId;}
+class Generated {
+    public String id(String entityId){
+    return this.point + this.idConnector + entityId;}
+}

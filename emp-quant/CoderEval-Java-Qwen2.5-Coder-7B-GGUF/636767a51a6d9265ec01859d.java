@@ -1,11 +1,13 @@
-public boolean equals(final byte[] data,int offset,final int len){
-if(len != this.length){ 
-        return false; 
-    } 
-    for(int i = 0; i < len; i++){ 
-        if(this.bytes[i] != data[offset + i]){ 
+class Generated {
+    public boolean equals(final byte[] data,int offset,final int len){
+    if(len != this.length){ 
             return false; 
         } 
-    } 
-    return true; 
+        for(int i = 0; i < len; i++){ 
+            if(this.bytes[i] != data[offset + i]){ 
+                return false; 
+            } 
+        } 
+        return true; 
+    }
 }

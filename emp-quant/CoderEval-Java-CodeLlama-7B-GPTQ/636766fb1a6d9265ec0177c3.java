@@ -1,3 +1,5 @@
-public static boolean isAscii(final char ch){
-return ch <= 127;
+class Generated {
+    public static boolean isAscii(final char ch){
+    return ch <= 127;
+    }
 }

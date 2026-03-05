@@ -1,14 +1,16 @@
-public void abbreviate(final int nameStart,final StringBuffer buf){
-int count=0;
-    int index=nameStart;
-    while(index<buf.length()){
-        if(buf.charAt(index)=='.'){
-            count++;
-            if(count==3){
-                break;
+class Generated {
+    public void abbreviate(final int nameStart,final StringBuffer buf){
+    int count=0;
+        int index=nameStart;
+        while(index<buf.length()){
+            if(buf.charAt(index)=='.'){
+                count++;
+                if(count==3){
+                    break;
+                }
             }
+            index++;
         }
-        index++;
+        buf.delete(nameStart,index);
     }
-    buf.delete(nameStart,index);
 }

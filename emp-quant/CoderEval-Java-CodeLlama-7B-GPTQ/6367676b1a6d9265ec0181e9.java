@@ -1,8 +1,10 @@
-public static boolean substringMatch(CharSequence str,int index,CharSequence substring){
-for(int i=0;i<substring.length();i++){
-        if(str.charAt(index+i)!=substring.charAt(i)){
-            return false;
+class Generated {
+    public static boolean substringMatch(CharSequence str,int index,CharSequence substring){
+    for(int i=0;i<substring.length();i++){
+            if(str.charAt(index+i)!=substring.charAt(i)){
+                return false;
+            }
         }
+        return true;
     }
-    return true;
 }

@@ -1,3 +1,5 @@
-Edge edgeToNext(){
-return edgeToNext;
+class Generated {
+    Edge edgeToNext(){
+    return edgeToNext;
+    }
 }

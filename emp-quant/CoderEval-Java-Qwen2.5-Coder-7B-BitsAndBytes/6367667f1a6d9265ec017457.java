@@ -1,2 +1,4 @@
-private static int decodeOctets(int i,ByteBuffer bb,StringBuilder sb){
-int j=i;while(j<bb.limit()){byte b=bb.get(j);if(b>=0)break;if((b&0x80)==0x80){int k=j+1;for(;k<j+4;k++){if(k==bb.limit())return j;byte c=bb.get(k);if((c&0xC0)!=0x80)return j;}j=k-1;continue;}else if((b&0xE0)==0xC0){if(j+2>=bb.limit())return j;j+=2;continue;}else if((b&0xF0)==0xE0){if(j+3>=bb.limit())return j;j+=3;continue;}else if((b&0xF8)==0xF0){if(j+4>=bb.limit())return j;j+=4;continue;}else return j;}sb.append(new String(bb.array(),i,j-i,"UTF-8"));return j;}
+class Generated {
+    private static int decodeOctets(int i,ByteBuffer bb,StringBuilder sb){
+    int j=i;while(j<bb.limit()){byte b=bb.get(j);if(b>=0)break;if((b&0x80)==0x80){int k=j+1;for(;k<j+4;k++){if(k==bb.limit())return j;byte c=bb.get(k);if((c&0xC0)!=0x80)return j;}j=k-1;continue;}else if((b&0xE0)==0xC0){if(j+2>=bb.limit())return j;j+=2;continue;}else if((b&0xF0)==0xE0){if(j+3>=bb.limit())return j;j+=3;continue;}else if((b&0xF8)==0xF0){if(j+4>=bb.limit())return j;j+=4;continue;}else return j;}sb.append(new String(bb.array(),i,j-i,"UTF-8"));return j;}
+}

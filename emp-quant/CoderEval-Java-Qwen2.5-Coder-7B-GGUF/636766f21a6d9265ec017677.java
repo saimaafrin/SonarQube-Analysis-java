@@ -1,3 +1,5 @@
-public static boolean isNotTrue(Boolean bool){
-return !bool; 
+class Generated {
+    public static boolean isNotTrue(Boolean bool){
+    return !bool; 
+    }
 }

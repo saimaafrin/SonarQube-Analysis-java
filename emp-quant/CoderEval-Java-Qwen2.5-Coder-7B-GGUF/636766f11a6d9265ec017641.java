@@ -1,2 +1,4 @@
-@Override public int available() throws IOException {
-return index < limit ? limit - index : 0; }
+class Generated {
+    @Override public int available() throws IOException {
+    return index < limit ? limit - index : 0; }
+}

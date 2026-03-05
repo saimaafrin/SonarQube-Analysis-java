@@ -1,3 +1,5 @@
-public boolean remove(int val){
-
+class Generated {
+    public boolean remove(int val){
+    
+    }
 }

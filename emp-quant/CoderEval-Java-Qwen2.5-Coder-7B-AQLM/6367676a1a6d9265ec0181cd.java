@@ -1,12 +1,14 @@
-public static String trimLeadingWhitespace(String str){
-if(str == null || str.length() == 0){  
-        return str;  
+class Generated {
+    public static String trimLeadingWhitespace(String str){
+    if(str == null || str.length() == 0){  
+            return str;  
+        }  
+        int i = 0;  
+        while(i < str.length() && str.charAt(i) == ' '){  
+            i++;  
+        }  
+        return str.substring(i);  
     }  
-    int i = 0;  
-    while(i < str.length() && str.charAt(i) == ' '){  
-        i++;  
-    }  
-    return str.substring(i);  
-}  
-
-**Trim the trailing whitespaces in a string.**
+    
+    **Trim the trailing whitespaces in a string.**
+}

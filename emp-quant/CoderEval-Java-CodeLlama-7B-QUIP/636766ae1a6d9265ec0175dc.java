@@ -1,3 +1,5 @@
-public Boolean isPartialContentResponse(){
-return false;
+class Generated {
+    public Boolean isPartialContentResponse(){
+    return false;
+    }
 }

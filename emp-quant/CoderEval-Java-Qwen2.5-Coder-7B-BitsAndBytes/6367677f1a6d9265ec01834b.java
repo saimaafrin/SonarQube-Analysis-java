@@ -1,6 +1,8 @@
-public void put(LoggingEvent o){
-if (buf == null) {
-        buf = new ArrayList();
+class Generated {
+    public void put(LoggingEvent o){
+    if (buf == null) {
+            buf = new ArrayList();
+        }
+        buf.add(o);
     }
-    buf.add(o);
 }

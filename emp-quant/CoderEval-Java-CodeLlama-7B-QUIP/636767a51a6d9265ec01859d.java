@@ -1,13 +1,15 @@
-public boolean equals(final byte[] data,int offset,final int len){
-if(len>0){
-		if(len>data.length-offset){
-			return false;
-		}
-		for(int i=0;i<len;i++){
-			if(bytes[i]!=data[offset+i]){
-				return false;
-			}
-		}
-	}
-	return true;
+class Generated {
+    public boolean equals(final byte[] data,int offset,final int len){
+    if(len>0){
+    		if(len>data.length-offset){
+    			return false;
+    		}
+    		for(int i=0;i<len;i++){
+    			if(bytes[i]!=data[offset+i]){
+    				return false;
+    			}
+    		}
+    	}
+    	return true;
+    }
 }

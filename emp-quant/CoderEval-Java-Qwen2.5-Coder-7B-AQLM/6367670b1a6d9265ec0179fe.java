@@ -1,2 +1,4 @@
-@Override public void write(byte b[]) throws IOException {
-write(b, 0, b.length); }
+class Generated {
+    @Override public void write(byte b[]) throws IOException {
+    write(b, 0, b.length); }
+}

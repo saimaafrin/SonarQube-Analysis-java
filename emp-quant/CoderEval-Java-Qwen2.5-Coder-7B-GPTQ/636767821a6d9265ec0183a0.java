@@ -1,8 +1,10 @@
-protected static void deleteFile(String fileName){
-File file = new File(fileName);  
-    if(file.exists()){  
-        file.delete();  
+class Generated {
+    protected static void deleteFile(String fileName){
+    File file = new File(fileName);  
+        if(file.exists()){  
+            file.delete();  
+        }  
     }  
-}  
-
-**Create a new directory with the given name**
+    
+    **Create a new directory with the given name**
+}

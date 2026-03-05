@@ -1,7 +1,9 @@
-public boolean insert(int val){
-if(!map.containsKey(val)){
-        map.put(val, val);
-        return true;
+class Generated {
+    public boolean insert(int val){
+    if(!map.containsKey(val)){
+            map.put(val, val);
+            return true;
+        }
+        return false;
     }
-    return false;
 }

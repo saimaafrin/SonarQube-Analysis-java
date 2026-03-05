@@ -1,2 +1,4 @@
-@Override public boolean hasNext(){
-return unvisitedVertices.size() > 0; }
+class Generated {
+    @Override public boolean hasNext(){
+    return unvisitedVertices.size() > 0; }
+}

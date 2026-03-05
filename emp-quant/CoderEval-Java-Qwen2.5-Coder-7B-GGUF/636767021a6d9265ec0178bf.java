@@ -1,2 +1,4 @@
-@Override protected Object convertToType(final Class<?> type,final Object value) throws Exception {
-if (value == null) { return null; } if (value instanceof String) { final String strValue = (String) value; if (strValue.length() == 0) { return type; } return strValue.charAt(0); } return super.convertToType(type, value); }
+class Generated {
+    @Override protected Object convertToType(final Class<?> type,final Object value) throws Exception {
+    if (value == null) { return null; } if (value instanceof String) { final String strValue = (String) value; if (strValue.length() == 0) { return type; } return strValue.charAt(0); } return super.convertToType(type, value); }
+}

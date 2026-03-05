@@ -1,5 +1,7 @@
-public static String peek(){
-return stack.peek(); 
-} 
-
-**Remove and return the value at the top of the stack**
+class Generated {
+    public static String peek(){
+    return stack.peek(); 
+    } 
+    
+    **Remove and return the value at the top of the stack**
+}

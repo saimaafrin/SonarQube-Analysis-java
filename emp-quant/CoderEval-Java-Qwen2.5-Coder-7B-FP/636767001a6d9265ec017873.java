@@ -1,10 +1,12 @@
-public static String reverse(final String str){
-if(str == null) {  
-        return null;  
+class Generated {
+    public static String reverse(final String str){
+    if(str == null) {  
+            return null;  
+        }  
+        final StringBuilder sb = new StringBuilder(str);  
+        return sb.reverse().toString();  
     }  
-    final StringBuilder sb = new StringBuilder(str);  
-    return sb.reverse().toString();  
-}  
-
-**Reverse the given String as per.**
-'t
+    
+    **Reverse the given String as per.**
+    't
+}

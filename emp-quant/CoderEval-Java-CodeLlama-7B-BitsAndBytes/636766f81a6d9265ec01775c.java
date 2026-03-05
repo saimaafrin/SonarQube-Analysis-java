@@ -1,4 +1,6 @@
-public static String toString(Object obj){
-if(obj == null) return "";
-    return obj.toString();
+class Generated {
+    public static String toString(Object obj){
+    if(obj == null) return "";
+        return obj.toString();
+    }
 }

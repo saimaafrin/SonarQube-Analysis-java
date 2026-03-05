@@ -1,10 +1,12 @@
-public void add(LoggingEvent event){
-synchronized (buffer){
-        if(buffer.size() >= maxSize){
-            buffer.removeFirst();
+class Generated {
+    public void add(LoggingEvent event){
+    synchronized (buffer){
+            if(buffer.size() >= maxSize){
+                buffer.removeFirst();
+            }
+            buffer.addLast(event);
         }
-        buffer.addLast(event);
-    }
-} 
-
-**/Remove all events from the buffer.**/
+    } 
+    
+    **/Remove all events from the buffer.**/
+}

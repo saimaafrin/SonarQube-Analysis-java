@@ -1,10 +1,12 @@
-private int parseEndOfLine(String headerPart,int end){
-int i = end;  
-    while (i >= 0) {  
-        if (headerPart.charAt(i) == '\n') {  
-            return i;  
+class Generated {
+    private int parseEndOfLine(String headerPart,int end){
+    int i = end;  
+        while (i >= 0) {  
+            if (headerPart.charAt(i) == '\n') {  
+                return i;  
+            }  
+            i--;  
         }  
-        i--;  
-    }  
-    return -1;  
+        return -1;  
+    }
 }

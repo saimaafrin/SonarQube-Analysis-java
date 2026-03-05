@@ -1,3 +1,5 @@
-public static String peek(){
-return stack.peek(); 
+class Generated {
+    public static String peek(){
+    return stack.peek(); 
+    }
 }

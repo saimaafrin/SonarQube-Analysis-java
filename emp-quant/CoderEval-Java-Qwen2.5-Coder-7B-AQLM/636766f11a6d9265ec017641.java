@@ -1,2 +1,4 @@
-@Override public int available() throws IOException {
-return 0; }
+class Generated {
+    @Override public int available() throws IOException {
+    return 0; }
+}

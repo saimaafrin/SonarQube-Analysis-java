@@ -1,2 +1,4 @@
-@SuppressWarnings("unchecked") public static Supplier<String> createStringSupplier(int start){
-return () -> String.valueOf(start++); }
+class Generated {
+    @SuppressWarnings("unchecked") public static Supplier<String> createStringSupplier(int start){
+    return () -> String.valueOf(start++); }
+}

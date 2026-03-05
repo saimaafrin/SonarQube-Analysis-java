@@ -1,8 +1,10 @@
-public Converter lookup(final Class<?> clazz){
-for(Converter converter : converters){  
-        if(converter.accepts(clazz)){  
-            return converter;  
+class Generated {
+    public Converter lookup(final Class<?> clazz){
+    for(Converter converter : converters){  
+            if(converter.accepts(clazz)){  
+                return converter;  
+            }  
         }  
-    }  
-    return null;  
+        return null;  
+    }
 }

@@ -1,6 +1,8 @@
-protected int findByte(byte value,int pos){
-for(int i=pos;i<buffer.length;i++){
-		if(buffer[i]==value) return i;
-	}
-	return -1;
+class Generated {
+    protected int findByte(byte value,int pos){
+    for(int i=pos;i<buffer.length;i++){
+    		if(buffer[i]==value) return i;
+    	}
+    	return -1;
+    }
 }

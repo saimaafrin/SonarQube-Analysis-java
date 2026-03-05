@@ -1,7 +1,9 @@
-public static String stripFilenameExtension(String path){
-int lastDotIndex = path.lastIndexOf('.');  
-    if(lastDotIndex == -1){  
-        return path;  
-    }  
-    return path.substring(0, lastDotIndex);  
+class Generated {
+    public static String stripFilenameExtension(String path){
+    int lastDotIndex = path.lastIndexOf('.');  
+        if(lastDotIndex == -1){  
+            return path;  
+        }  
+        return path.substring(0, lastDotIndex);  
+    }
 }

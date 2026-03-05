@@ -1,11 +1,13 @@
-private String parseToken(final char[] terminators){
-StringBuilder sb = new StringBuilder();
-    while (true){
-        if (isTerminator(terminators)){
-            break;
+class Generated {
+    private String parseToken(final char[] terminators){
+    StringBuilder sb = new StringBuilder();
+        while (true){
+            if (isTerminator(terminators)){
+                break;
+            }
+            sb.append(currentChar());
+            moveNext();
         }
-        sb.append(currentChar());
-        moveNext();
+        return sb.toString();
     }
-    return sb.toString();
 }

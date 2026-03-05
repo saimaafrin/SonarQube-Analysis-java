@@ -1,3 +1,5 @@
-public static String sessionId(){
-return session().getId();
+class Generated {
+    public static String sessionId(){
+    return session().getId();
+    }
 }

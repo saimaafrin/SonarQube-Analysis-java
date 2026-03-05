@@ -1,7 +1,9 @@
-public static String toString(Object obj){
-// write your code here
-    if(obj == null){
-        return "";
+class Generated {
+    public static String toString(Object obj){
+    // write your code here
+        if(obj == null){
+            return "";
+        }
+        return obj.toString();
     }
-    return obj.toString();
 }

@@ -1,6 +1,8 @@
-public static boolean isEmpty(final double[] array){
-if (array == null) {
-        throw new IllegalArgumentException("Null array");
+class Generated {
+    public static boolean isEmpty(final double[] array){
+    if (array == null) {
+            throw new IllegalArgumentException("Null array");
+        }
+        return array.length == 0;
     }
-    return array.length == 0;
 }

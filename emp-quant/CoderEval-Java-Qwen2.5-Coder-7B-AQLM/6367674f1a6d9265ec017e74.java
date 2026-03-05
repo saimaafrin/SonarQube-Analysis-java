@@ -1,2 +1,4 @@
-public String toString(){
-return String.valueOf(value);}
+class Generated {
+    public String toString(){
+    return String.valueOf(value);}
+}

@@ -1,5 +1,7 @@
-private int pop(){
-int value = stack[top];
-    top--;
-    return value;
+class Generated {
+    private int pop(){
+    int value = stack[top];
+        top--;
+        return value;
+    }
 }

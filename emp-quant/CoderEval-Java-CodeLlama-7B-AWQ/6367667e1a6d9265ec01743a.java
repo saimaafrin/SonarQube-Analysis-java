@@ -1,6 +1,8 @@
-public long lastWriteTimeStampInMilliseconds(){
-if(lastWriteTimeStamp == -1){
-        return -1;
+class Generated {
+    public long lastWriteTimeStampInMilliseconds(){
+    if(lastWriteTimeStamp == -1){
+            return -1;
+        }
+        return System.currentTimeMillis();
     }
-    return System.currentTimeMillis();
 }

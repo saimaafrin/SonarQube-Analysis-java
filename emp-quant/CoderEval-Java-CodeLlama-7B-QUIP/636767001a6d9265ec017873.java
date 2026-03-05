@@ -1,6 +1,8 @@
-public static String reverse(final String str){
-if(str == null){
-        return null;
+class Generated {
+    public static String reverse(final String str){
+    if(str == null){
+            return null;
+        }
+        return new StringBuilder(str).reverse().toString();
     }
-    return new StringBuilder(str).reverse().toString();
 }

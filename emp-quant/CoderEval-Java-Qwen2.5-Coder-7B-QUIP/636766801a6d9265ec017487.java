@@ -1,3 +1,5 @@
-public static String encodeTemplateNames(String s){
-return s.replace("{", "X").replace("}", "Y");  
+class Generated {
+    public static String encodeTemplateNames(String s){
+    return s.replace("{", "X").replace("}", "Y");  
+    }
 }

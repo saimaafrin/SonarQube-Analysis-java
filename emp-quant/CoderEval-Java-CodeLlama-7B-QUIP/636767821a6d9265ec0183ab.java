@@ -1,3 +1,5 @@
-public boolean hasThrown(){
-return hasThrown;
+class Generated {
+    public boolean hasThrown(){
+    return hasThrown;
+    }
 }

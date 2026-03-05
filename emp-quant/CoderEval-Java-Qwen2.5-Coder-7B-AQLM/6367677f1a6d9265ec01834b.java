@@ -1,3 +1,5 @@
-public void put(LoggingEvent o){
-buf.add(o); 
+class Generated {
+    public void put(LoggingEvent o){
+    buf.add(o); 
+    }
 }

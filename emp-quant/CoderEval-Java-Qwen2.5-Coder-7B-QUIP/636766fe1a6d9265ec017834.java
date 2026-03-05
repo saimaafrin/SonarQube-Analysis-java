@@ -1,5 +1,7 @@
-public static String sessionId(){
-return "sessionId";
+class Generated {
+    public static String sessionId(){
+    return "sessionId";
+    }
+    
+    **Return the servlet context id**
 }
-
-**Return the servlet context id**

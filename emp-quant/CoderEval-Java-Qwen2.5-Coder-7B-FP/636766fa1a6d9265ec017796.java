@@ -1,12 +1,14 @@
-public static Boolean[] toObject(final boolean[] array){
-if(array == null){
-        return null;
-    } else if(array.length == 0){
-        return new Boolean[0];
+class Generated {
+    public static Boolean[] toObject(final boolean[] array){
+    if(array == null){
+            return null;
+        } else if(array.length == 0){
+            return new Boolean[0];
+        }
+        final Boolean[] result = new Boolean[array.length];  
+        for(int i = 0; i < array.length; i++){
+            result[i] = array[i];
+        }
+        return result;
     }
-    final Boolean[] result = new Boolean[array.length];  
-    for(int i = 0; i < array.length; i++){
-        result[i] = array[i];
-    }
-    return result;
 }

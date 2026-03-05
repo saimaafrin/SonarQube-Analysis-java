@@ -1,2 +1,4 @@
-public byte[] toByteArray(){
-return this.toByteArray();}
+class Generated {
+    public byte[] toByteArray(){
+    return this.toByteArray();}
+}

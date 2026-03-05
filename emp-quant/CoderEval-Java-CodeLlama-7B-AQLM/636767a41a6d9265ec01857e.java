@@ -1,5 +1,7 @@
-private static int compareSigned(long a,long b){
-if(a<b)return -1;
-	if(a>b)return 1;
-	return 0;
+class Generated {
+    private static int compareSigned(long a,long b){
+    if(a<b)return -1;
+    	if(a>b)return 1;
+    	return 0;
+    }
 }

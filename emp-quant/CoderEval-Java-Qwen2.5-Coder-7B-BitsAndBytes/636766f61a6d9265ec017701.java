@@ -1,6 +1,8 @@
-public static int lastIndexOf(String str,String searchStr){
-if(str.isEmpty()){
-        return INDEXNOTFOUND;
+class Generated {
+    public static int lastIndexOf(String str,String searchStr){
+    if(str.isEmpty()){
+            return INDEXNOTFOUND;
+        }
+        return str.lastIndexOf(searchStr);
     }
-    return str.lastIndexOf(searchStr);
 }

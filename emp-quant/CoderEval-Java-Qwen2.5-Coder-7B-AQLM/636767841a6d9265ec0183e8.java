@@ -1,5 +1,7 @@
-public void add(LoggingEvent event){
-synchronized (buffer){
-        buffer.add(event);
+class Generated {
+    public void add(LoggingEvent event){
+    synchronized (buffer){
+            buffer.add(event);
+        }
     }
 }

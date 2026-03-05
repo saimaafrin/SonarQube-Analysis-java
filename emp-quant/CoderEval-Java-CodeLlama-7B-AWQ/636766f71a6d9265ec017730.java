@@ -1,6 +1,8 @@
-static String[] toNoNullStringArray(Collection<?> collection){
-if(collection == null){
-        return EMPTY_STRING_ARRAY;
+class Generated {
+    static String[] toNoNullStringArray(Collection<?> collection){
+    if(collection == null){
+            return EMPTY_STRING_ARRAY;
+        }
+        return collection.toArray(new String[collection.size()]);
     }
-    return collection.toArray(new String[collection.size()]);
 }

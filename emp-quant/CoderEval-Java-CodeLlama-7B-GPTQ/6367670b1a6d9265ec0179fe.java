@@ -1,3 +1,5 @@
-@Override public void write(byte b[]) throws IOException {
-out.write(b);
+class Generated {
+    @Override public void write(byte b[]) throws IOException {
+    out.write(b);
+    }
 }

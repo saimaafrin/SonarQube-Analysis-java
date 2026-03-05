@@ -1,54 +1,56 @@
-public static String unescapeJava(String str) throws Exception {
-StringBuffer sb = new StringBuffer();
-    int i = 0;
-    while (i < str.length()) {
-        char c = str.charAt(i);
-        if (c == '\\') {
-            c = str.charAt(++i);
-            switch (c) {
-                case 'b':
-                    sb.append('\b');
-                    break;
-                case 't':
-                    sb.append('\t');
-                    break;
-                case 'n':
-                    sb.append('\n');
-                    break;
-                case 'f':
-                    sb.append('\f');
-                    break;
-                case 'r':
-                    sb.append('\r');
-                    break;
-                case '\\':
-                    sb.append('\\');
-                    break;
-                case '\'':
-                    sb.append('\'');
-                    break;
-                case '\"':
-                    sb.append('\"');
-                    break;
-                case '0':
-                    sb.append('\0');
-                    break;
-                case 'u':
-                    sb.append((char) Integer.parseInt(str.substring(i + 1, i + 5), 16));
-                    i += 4;
-                    break;
-                case 'x':
-                    sb.append((char) Integer.parseInt(str.substring(i + 1, i + 3), 16));
-                    i += 2;
-                    break;
-                default:
-                    sb.append(c);
-                    break;
+class Generated {
+    public static String unescapeJava(String str) throws Exception {
+    StringBuffer sb = new StringBuffer();
+        int i = 0;
+        while (i < str.length()) {
+            char c = str.charAt(i);
+            if (c == '\\') {
+                c = str.charAt(++i);
+                switch (c) {
+                    case 'b':
+                        sb.append('\b');
+                        break;
+                    case 't':
+                        sb.append('\t');
+                        break;
+                    case 'n':
+                        sb.append('\n');
+                        break;
+                    case 'f':
+                        sb.append('\f');
+                        break;
+                    case 'r':
+                        sb.append('\r');
+                        break;
+                    case '\\':
+                        sb.append('\\');
+                        break;
+                    case '\'':
+                        sb.append('\'');
+                        break;
+                    case '\"':
+                        sb.append('\"');
+                        break;
+                    case '0':
+                        sb.append('\0');
+                        break;
+                    case 'u':
+                        sb.append((char) Integer.parseInt(str.substring(i + 1, i + 5), 16));
+                        i += 4;
+                        break;
+                    case 'x':
+                        sb.append((char) Integer.parseInt(str.substring(i + 1, i + 3), 16));
+                        i += 2;
+                        break;
+                    default:
+                        sb.append(c);
+                        break;
+                }
+            } else {
+                sb.append(c);
             }
-        } else {
-            sb.append(c);
+            i++;
         }
-        i++;
+        return sb.toString();
     }
-    return sb.toString();
 }

@@ -1,3 +1,5 @@
-public boolean isExpired(long timestamp,long expiredThreshold){
-return timestamp - lastUpdateTimestamp > expiredThreshold;  
+class Generated {
+    public boolean isExpired(long timestamp,long expiredThreshold){
+    return timestamp - lastUpdateTimestamp > expiredThreshold;  
+    }
 }

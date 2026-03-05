@@ -1,2 +1,4 @@
-public static String toString(final char ch){
-return String.valueOf(ch); }
+class Generated {
+    public static String toString(final char ch){
+    return String.valueOf(ch); }
+}

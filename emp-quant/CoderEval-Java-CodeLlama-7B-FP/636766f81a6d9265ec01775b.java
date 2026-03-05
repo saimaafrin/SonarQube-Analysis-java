@@ -1,3 +1,5 @@
-public long readLong(final int offset){
-return (long)readInt(offset);
+class Generated {
+    public long readLong(final int offset){
+    return (long)readInt(offset);
+    }
 }

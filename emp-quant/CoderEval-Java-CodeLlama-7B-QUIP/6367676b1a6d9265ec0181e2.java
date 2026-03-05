@@ -1,8 +1,10 @@
-public static Object findFirstMatch(Collection source,Collection candidates){
-for(Object candidate:candidates){
-		if(source.contains(candidate)){
-			return candidate;
-		}
-	}
-	return null;
+class Generated {
+    public static Object findFirstMatch(Collection source,Collection candidates){
+    for(Object candidate:candidates){
+    		if(source.contains(candidate)){
+    			return candidate;
+    		}
+    	}
+    	return null;
+    }
 }

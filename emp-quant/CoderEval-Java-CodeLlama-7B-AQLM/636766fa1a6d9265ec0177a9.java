@@ -1,3 +1,5 @@
-private void addInitializedType(final int abstractType){
-initializedTypes.add(abstractType);
+class Generated {
+    private void addInitializedType(final int abstractType){
+    initializedTypes.add(abstractType);
+    }
 }

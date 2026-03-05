@@ -1,3 +1,5 @@
-public static boolean isAsciiControl(final char ch){
-return (ch >= 0 && ch <= 31) || ch == 127;  
+class Generated {
+    public static boolean isAsciiControl(final char ch){
+    return (ch >= 0 && ch <= 31) || ch == 127;  
+    }
 }

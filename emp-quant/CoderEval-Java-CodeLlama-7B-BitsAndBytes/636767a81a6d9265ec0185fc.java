@@ -1,10 +1,12 @@
-public int readTag() throws IOException {
-int tag = readUnsignedByte();
-    if (tag == 0) {
-        tag = readUnsignedByte();
+class Generated {
+    public int readTag() throws IOException {
+    int tag = readUnsignedByte();
         if (tag == 0) {
-            throw new EOFException();
+            tag = readUnsignedByte();
+            if (tag == 0) {
+                throw new EOFException();
+            }
         }
+        return tag;
     }
-    return tag;
 }

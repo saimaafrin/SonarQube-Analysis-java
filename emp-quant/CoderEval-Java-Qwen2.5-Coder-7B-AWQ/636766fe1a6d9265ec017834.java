@@ -1,5 +1,7 @@
-public static String sessionId(){
-return FacesContext.getCurrentInstance().getExternalContext().getSessionId();
-} 
-
-**Return the servlet context path**
+class Generated {
+    public static String sessionId(){
+    return FacesContext.getCurrentInstance().getExternalContext().getSessionId();
+    } 
+    
+    **Return the servlet context path**
+}

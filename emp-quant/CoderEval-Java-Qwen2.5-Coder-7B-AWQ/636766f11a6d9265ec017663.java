@@ -1,9 +1,11 @@
-public static boolean isSameLength(final double[] array1,final double[] array2){
-if(array1==null&&array2==null){
-        return true;
+class Generated {
+    public static boolean isSameLength(final double[] array1,final double[] array2){
+    if(array1==null&&array2==null){
+            return true;
+        }
+        if(array1!=null&&array2!=null){
+            return array1.length==array2.length;
+        }
+        return false;
     }
-    if(array1!=null&&array2!=null){
-        return array1.length==array2.length;
-    }
-    return false;
 }

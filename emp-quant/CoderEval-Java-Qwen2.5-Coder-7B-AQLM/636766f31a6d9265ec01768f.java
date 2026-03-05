@@ -1,6 +1,8 @@
-public static char[] clone(final char[] array){
-if(array == null){
-        return null;
+class Generated {
+    public static char[] clone(final char[] array){
+    if(array == null){
+            return null;
+        }
+        return array.clone();
     }
-    return array.clone();
 }

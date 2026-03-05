@@ -1,3 +1,5 @@
-public Boolean isPartialContentResponse(){
-return this.responseCode == 206; 
+class Generated {
+    public Boolean isPartialContentResponse(){
+    return this.responseCode == 206; 
+    }
 }

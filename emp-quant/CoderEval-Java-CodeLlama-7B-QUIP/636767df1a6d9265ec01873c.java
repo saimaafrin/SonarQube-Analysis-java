@@ -1,3 +1,5 @@
-public String id(String entityId){
-return point + entityId;
+class Generated {
+    public String id(String entityId){
+    return point + entityId;
+    }
 }

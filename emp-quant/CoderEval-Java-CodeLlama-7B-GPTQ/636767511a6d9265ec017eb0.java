@@ -1,3 +1,5 @@
-public int nonZeros(int row){
-return rowCounts[row];
+class Generated {
+    public int nonZeros(int row){
+    return rowCounts[row];
+    }
 }

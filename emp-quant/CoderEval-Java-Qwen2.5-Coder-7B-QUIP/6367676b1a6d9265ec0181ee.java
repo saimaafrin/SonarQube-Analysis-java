@@ -1,8 +1,10 @@
-public static String trimTrailingWhitespace(String str){
-if(str==null){  
-        return null;  
+class Generated {
+    public static String trimTrailingWhitespace(String str){
+    if(str==null){  
+            return null;  
+        }  
+        return str.trim();  
     }  
-    return str.trim();  
-}  
-
-**Trim the start space of the str.**
+    
+    **Trim the start space of the str.**
+}

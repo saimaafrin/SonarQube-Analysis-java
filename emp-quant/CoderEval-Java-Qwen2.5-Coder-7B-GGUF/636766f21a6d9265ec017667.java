@@ -1,5 +1,7 @@
-public short readShort(final int offset){
-return (short) ((classFileBuffer[offset] << 8) | (classFileBuffer[offset + 1] & 0xFF));  
-}  
-
-**Read a int value from classFileBuffer**/
+class Generated {
+    public short readShort(final int offset){
+    return (short) ((classFileBuffer[offset] << 8) | (classFileBuffer[offset + 1] & 0xFF));  
+    }  
+    
+    **Read a int value from classFileBuffer**/
+}

@@ -1,3 +1,5 @@
-public long readLong(final int offset){
-return readLong(offset, ByteOrder.nativeOrder());
+class Generated {
+    public long readLong(final int offset){
+    return readLong(offset, ByteOrder.nativeOrder());
+    }
 }

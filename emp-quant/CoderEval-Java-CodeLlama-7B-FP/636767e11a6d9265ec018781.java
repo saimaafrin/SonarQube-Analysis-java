@@ -1,32 +1,34 @@
-@Override public void accept(final METRICS data){
-if(data==null)return;
-	if(data.id==null)return;
-	if(data.id.isEmpty())return;
-	if(data.value==null)return;
-	if(data.value.isEmpty())return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
-	if(data.value.length()<1)return;
-	if(data.value.length()>1000000)return;
+class Generated {
+    @Override public void accept(final METRICS data){
+    if(data==null)return;
+    	if(data.id==null)return;
+    	if(data.id.isEmpty())return;
+    	if(data.value==null)return;
+    	if(data.value.isEmpty())return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    	if(data.value.length()<1)return;
+    	if(data.value.length()>1000000)return;
+    }
 }

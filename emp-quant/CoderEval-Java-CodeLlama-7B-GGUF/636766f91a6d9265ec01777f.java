@@ -1,3 +1,5 @@
-public static boolean toBoolean(Boolean bool){
-return bool!=null?bool:false;
+class Generated {
+    public static boolean toBoolean(Boolean bool){
+    return bool!=null?bool:false;
+    }
 }

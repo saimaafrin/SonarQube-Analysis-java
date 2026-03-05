@@ -1,5 +1,7 @@
-public static String unescapeJava(String str) throws Exception {
-return str.replace("\\", "");
+class Generated {
+    public static String unescapeJava(String str) throws Exception {
+    return str.replace("\\", "");
+    }
+    
+    **Unescapes HTML that found in the String.**
 }
-
-**Unescapes HTML that found in the String.**

@@ -1,14 +1,16 @@
-private static boolean startsWith(final String str,final String prefix,final boolean ignoreCase){
-if(str==null||prefix==null)return false;
-    if(str.length()<prefix.length())return false;
-    if(ignoreCase){
-        for(int i=0;i<prefix.length();i++){
-            if(Character.toLowerCase(str.charAt(i))!=Character.toLowerCase(prefix.charAt(i)))return false;
+class Generated {
+    private static boolean startsWith(final String str,final String prefix,final boolean ignoreCase){
+    if(str==null||prefix==null)return false;
+        if(str.length()<prefix.length())return false;
+        if(ignoreCase){
+            for(int i=0;i<prefix.length();i++){
+                if(Character.toLowerCase(str.charAt(i))!=Character.toLowerCase(prefix.charAt(i)))return false;
+            }
+        }else{
+            for(int i=0;i<prefix.length();i++){
+                if(str.charAt(i)!=prefix.charAt(i))return false;
+            }
         }
-    }else{
-        for(int i=0;i<prefix.length();i++){
-            if(str.charAt(i)!=prefix.charAt(i))return false;
-        }
+        return true;
     }
-    return true;
 }

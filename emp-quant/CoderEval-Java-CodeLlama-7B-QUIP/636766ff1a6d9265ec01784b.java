@@ -1,12 +1,14 @@
-public static boolean isDigits(String str){
-if(str==null){
-		return false;
-	}
-	int length = str.length();
-	for(int i=0;i<length;i++){
-		if(!Character.isDigit(str.charAt(i))){
-			return false;
-		}
-	}
-	return true;
+class Generated {
+    public static boolean isDigits(String str){
+    if(str==null){
+    		return false;
+    	}
+    	int length = str.length();
+    	for(int i=0;i<length;i++){
+    		if(!Character.isDigit(str.charAt(i))){
+    			return false;
+    		}
+    	}
+    	return true;
+    }
 }

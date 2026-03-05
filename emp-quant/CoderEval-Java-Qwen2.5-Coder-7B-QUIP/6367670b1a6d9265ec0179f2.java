@@ -1,2 +1,4 @@
-@Override public boolean containsKey(final Object key){
-return this.get(key) != null; }
+class Generated {
+    @Override public boolean containsKey(final Object key){
+    return this.get(key) != null; }
+}

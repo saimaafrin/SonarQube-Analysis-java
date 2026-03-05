@@ -1,3 +1,5 @@
-public boolean isExpired(long timestamp,long expiredThreshold){
-//TODO: implement this method
+class Generated {
+    public boolean isExpired(long timestamp,long expiredThreshold){
+    //TODO: implement this method
+    }
 }

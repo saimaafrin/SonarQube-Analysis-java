@@ -1,2 +1,4 @@
-@Override public boolean hasNext(){
-return !this.visited.isEmpty();}
+class Generated {
+    @Override public boolean hasNext(){
+    return !this.visited.isEmpty();}
+}

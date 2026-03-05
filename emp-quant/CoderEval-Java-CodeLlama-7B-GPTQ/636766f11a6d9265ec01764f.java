@@ -1,3 +1,5 @@
-public Collection<Object> values(){
-return Collections.unmodifiableCollection(this.map.values());
+class Generated {
+    public Collection<Object> values(){
+    return Collections.unmodifiableCollection(this.map.values());
+    }
 }

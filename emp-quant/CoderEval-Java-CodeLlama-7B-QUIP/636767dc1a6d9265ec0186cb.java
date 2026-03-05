@@ -1,6 +1,8 @@
-public void init(){
-if(this.getParent()!=null){
-		this.getParent().init();
-	}
-	this.init();
+class Generated {
+    public void init(){
+    if(this.getParent()!=null){
+    		this.getParent().init();
+    	}
+    	this.init();
+    }
 }

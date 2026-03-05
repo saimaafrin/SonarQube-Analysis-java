@@ -1,3 +1,5 @@
-public Logger exists(String name){
-return loggers.get(name);
+class Generated {
+    public Logger exists(String name){
+    return loggers.get(name);
+    }
 }

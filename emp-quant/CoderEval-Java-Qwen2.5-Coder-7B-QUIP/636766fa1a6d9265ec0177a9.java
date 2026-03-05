@@ -1,3 +1,5 @@
-private void addInitializedType(final int abstractType){
-this.initializations = this.initializations + abstractType;  
+class Generated {
+    private void addInitializedType(final int abstractType){
+    this.initializations = this.initializations + abstractType;  
+    }
 }

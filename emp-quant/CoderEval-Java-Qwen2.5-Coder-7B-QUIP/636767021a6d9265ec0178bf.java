@@ -1,4 +1,6 @@
-@Override protected Object convertToType(final Class<?> type,final Object value) throws Exception {
-if (value instanceof String) { final String valueString = (String)value; if (valueString.length() == 0) { return type.getDefaultValue(); } else { return valueString.charAt(0); } } else { throw new Exception("Invalid value type"); } }
-```
-This code snippet is a method that converts a value to a specific type. It checks if the value is a string and then checks if the length of the string is 0. If the length is 0, it returns the default value of the type. Otherwise, it returns the first character of the string. If the value is not a string, it throws an exception. This method is useful for converting values to specific types in a consistent manner.
+class Generated {
+    @Override protected Object convertToType(final Class<?> type,final Object value) throws Exception {
+    if (value instanceof String) { final String valueString = (String)value; if (valueString.length() == 0) { return type.getDefaultValue(); } else { return valueString.charAt(0); } } else { throw new Exception("Invalid value type"); } }
+    ```
+    This code snippet is a method that converts a value to a specific type. It checks if the value is a string and then checks if the length of the string is 0. If the length is 0, it returns the default value of the type. Otherwise, it returns the first character of the string. If the value is not a string, it throws an exception. This method is useful for converting values to specific types in a consistent manner.
+}

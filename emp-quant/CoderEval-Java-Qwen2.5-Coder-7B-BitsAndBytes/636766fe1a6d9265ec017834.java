@@ -1,2 +1,4 @@
-public static String sessionId(){
-return FacesContext.getCurrentInstance().getExternalContext().getSessionId(); }
+class Generated {
+    public static String sessionId(){
+    return FacesContext.getCurrentInstance().getExternalContext().getSessionId(); }
+}

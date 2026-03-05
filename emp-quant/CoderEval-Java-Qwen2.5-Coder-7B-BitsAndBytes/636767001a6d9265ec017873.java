@@ -1,6 +1,8 @@
-public static String reverse(final String str){
-if (str == null) { 
-        throw new IllegalArgumentException("Input string cannot be null"); 
-    } 
-    return new StringBuilder(str).reverse().toString(); 
+class Generated {
+    public static String reverse(final String str){
+    if (str == null) { 
+            throw new IllegalArgumentException("Input string cannot be null"); 
+        } 
+        return new StringBuilder(str).reverse().toString(); 
+    }
 }

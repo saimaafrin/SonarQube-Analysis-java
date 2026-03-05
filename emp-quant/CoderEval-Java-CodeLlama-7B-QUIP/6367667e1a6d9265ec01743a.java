@@ -1,3 +1,5 @@
-public long lastWriteTimeStampInMilliseconds(){
-return lastWriteTimeStampInMilliseconds;
+class Generated {
+    public long lastWriteTimeStampInMilliseconds(){
+    return lastWriteTimeStampInMilliseconds;
+    }
 }

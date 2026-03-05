@@ -1,2 +1,4 @@
-@Override public int hashCode(){
-return 0; }
+class Generated {
+    @Override public int hashCode(){
+    return 0; }
+}
