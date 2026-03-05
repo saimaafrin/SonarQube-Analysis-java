@@ -1,0 +1,2 @@
+public static <V,E>IsomorphicGraphMapping<V,E> identity(Graph<V,E> graph){
+return new IsomorphicGraphMapping<>(graph,graph,new HashMap<>());}
