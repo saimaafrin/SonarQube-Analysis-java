@@ -1,0 +1,2 @@
+@Override public void write(byte b[]) throws IOException {
+write(b, 0, 1); }
