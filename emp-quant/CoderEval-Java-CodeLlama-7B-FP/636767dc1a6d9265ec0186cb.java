@@ -1,0 +1,41 @@
+public void init(){
+if(this.isInitialized()){
+		return;
+	}
+	this.setInitialized(true);
+	this.setName(this.getName());
+	this.setPath(this.getPath());
+	this.setParent(this.getParent());
+	this.setChildren(this.getChildren());
+	this.setFiles(this.getFiles());
+	this.setDirectories(this.getDirectories());
+	this.setSize(this.getSize());
+	this.setLastModified(this.getLastModified());
+	this.setLastAccessed(this.getLastAccessed());
+	this.setCreationTime(this.getCreationTime());
+	this.setReadable(this.isReadable());
+	this.setWritable(this.isWritable());
+	this.setExecutable(this.isExecutable());
+	this.setHidden(this.isHidden());
+	this.setAbsolute(this.isAbsolute());
+	this.setRoot(this.isRoot());
+	this.setFile(this.isFile());
+	this.setDirectory(this.isDirectory());
+	this.setExists(this.exists());
+	this.setCanonicalPath(this.getCanonicalPath());
+	this.setCanonicalFile(this.getCanonicalFile());
+	this.setAbsolutePath(this.getAbsolutePath());
+	this.setAbsoluteFile(this.getAbsoluteFile());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.getParentDirectory());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.getParentDirectory());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.getParentDirectory());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.getParentDirectory());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.getParentDirectory());
+	this.setParentFile(this.getParentFile());
+	this.setParentDirectory(this.get
+}
